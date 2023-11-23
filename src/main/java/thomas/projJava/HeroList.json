@@ -1,0 +1,12 @@
+{
+  "1": {
+    "name": "Spozer",
+    "type": "Guerrier",
+    "hp": 12
+  },
+  "2": {
+    "name": "Rezops",
+    "type": "Magicien",
+    "hp": 8
+  }
+}
