@@ -1,5 +1,16 @@
 package thomas.projJava;
 
+
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(example = """
+        {
+        "id": 1,
+        "name": "Spozer",
+        "type": "Guerrier",
+        "hp": 10
+        }
+        """,description = "Classe abstraite parent de warrior et wizard définissant un personnage et ses caractéristiques")
 public abstract class Hero {
     private int id;
     private String name;
