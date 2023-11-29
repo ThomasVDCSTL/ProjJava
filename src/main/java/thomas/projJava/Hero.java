@@ -2,6 +2,7 @@ package thomas.projJava;
 
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.*;
 
 @Schema(example = """
         {
@@ -11,17 +12,24 @@ import io.swagger.v3.oas.annotations.media.Schema;
         "hp": 10
         }
         """,description = "Classe abstraite parent de warrior et wizard définissant un personnage et ses caractéristiques")
-public abstract class Hero {
+@Entity
+@Table(name = "hero")
+public class Hero {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String type;
     private int hp;
 
-    public Hero(int id, String name, String type, int hp) {
-        this.id = id;
+    public Hero(String name, String type, int hp) {
         this.name = name;
         this.type = type;
         this.hp = hp;
+    }
+
+    public Hero() {
+
     }
 
     @Override
